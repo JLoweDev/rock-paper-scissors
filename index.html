@@ -1,12 +1,12 @@
 <script>
     
-    const computerPlay = () => {
+    function computerPlay() {
         let myArray = ['rock', 'paper', 'scissors']
         let computerSelection = myArray[Math.floor(Math.random() * myArray.length)];
         return computerSelection;
     }
 
-    const playerSelect = () => {
+    function playerSelect() {
         let playerSelection = prompt("Type rock, paper, or scissors.", "rock")
         return playerSelection
     }
@@ -37,13 +37,36 @@
 
 
     function game() {
-        
+        let playerSelection = playerSelect()
+        console.log(playerSelection)
+        let computerSelection = computerPlay()
+        console.log(computerSelection)
+        console.log(playRound(playerSelection, computerSelection))
+        let playerSelection2 = playerSelect()
+        console.log(playerSelection2)
+        let computerSelection2 = computerPlay()
+        console.log(computerSelection2)
+        console.log(playRound(playerSelection2, computerSelection2))
+        let playerSelection3 = playerSelect()
+        console.log(playerSelection3)
+        let computerSelection3 = computerPlay()
+        console.log(computerSelection3)
+        console.log(playRound(playerSelection3, computerSelection3))
+        let playerSelection4 = playerSelect()
+        console.log(playerSelection4)
+        let computerSelection4 = computerPlay()
+        console.log(computerSelection4)
+        console.log(playRound(playerSelection4, computerSelection4))
+        let playerSelection5 = playerSelect()
+        console.log(playerSelection5)
+        let computerSelection5 = computerPlay()
+        console.log(computerSelection5)
+        console.log(playRound(playerSelection5, computerSelection5))
     }
 
-    let computerSelection = computerPlay()
-    let playerSelection = playerSelect()
-    console.log(playerSelection)
-    console.log(computerSelection)
-    console.log(game())
+    //let computerSelection = computerPlay()
+    //let playerSelection = playerSelect()
+    
+    game();
     //console.log(playRound(playerSelection, computerSelection))
 </script>
