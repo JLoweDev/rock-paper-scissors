@@ -14,23 +14,23 @@
 
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == 'rock' && computerSelection == 'scissors') {
-            return 'You win!'
+            return 'You win! Rock beats Scissors!'
         } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-            return 'You lose.'
+            return 'You lose. Paper beats Rock.'
         } else if (playerSelection == 'rock' && computerSelection == 'rock') {
-            return 'Draw.'
+            return 'Draw. Two Rocks collide.'
         } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-            return 'You Win!'
+            return 'You Win! Paper beats Rock!'
         } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-            return 'You lose.'
+            return 'You lose. Scissors beat Paper.'
         } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-            return 'Draw.'
+            return 'Draw. Both sheets of paper drift away.'
         } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-            return 'You Win!'
+            return 'You Win! Scissors beat Paper!'
         } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-            return 'You lose.'
+            return 'You lose. Rock beats Scissors.'
         } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-            return 'Draw.'
+            return 'Draw. The Scissors harmlessly click clack.'
         }
         else { return 'It went wrong'
     }
