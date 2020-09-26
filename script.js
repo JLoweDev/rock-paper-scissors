@@ -3,29 +3,100 @@ const paper = document.getElementById('paperBtn');
 const scissors = document.getElementById('scissorsBtn');
 const infoBox = document.getElementById('infoBox');
 const p = document.createElement('p');
+const playerBox = document.getElementById('playerBox');
+const computerBox = document.getElementById('computerBox');
+const winnerBox = document.getElementById('winnerBox');
+let playerScore = 0;
+let computerScore = 0;
 
 rock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection)
+    let result = playRound(playerSelection, computerSelection);
     p.innerText = playRound(playerSelection, computerSelection);
     infoBox.appendChild(p);
+    let winVal = result.includes('You win!');
+    let lossValue = result.includes('You lose.')
+    if (winVal == true) {
+        playerScore++;
+        playerBox.innerText = String(playerScore);
+    } else if (lossValue == true) {
+        computerScore++;
+        computerBox.innerText = String(computerScore);
+    }
+    if (playerScore == 5) {
+        winnerBox.innerText = 'Player Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    } else if (computerScore == 5) {
+        winnerBox.innerText = 'Computer Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    }
 })
 
 paper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    p.innerText = playRound(playerSelection, computerSelection);
+    let result = playRound(playerSelection, computerSelection);
+    p.innerText = result;
     infoBox.appendChild(p);
+    let winVal = result.includes('You win!');
+    let lossValue = result.includes('You lose.')
+    if (winVal == true) {
+        playerScore++;
+        playerBox.innerText = String(playerScore);
+    } else if (lossValue == true) {
+        computerScore++;
+        computerBox.innerText = String(computerScore);
+    }
+    if (playerScore == 5) {
+        winnerBox.innerText = 'Player Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    } else if (computerScore == 5) {
+        winnerBox.innerText = 'Computer Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    }
 })
 
 scissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection)
+    let result = playRound(playerSelection, computerSelection);
     p.innerText = playRound(playerSelection, computerSelection);
     infoBox.appendChild(p);
+    let winVal = result.includes('You win!');
+    let lossValue = result.includes('You lose.')
+    if (winVal == true) {
+        playerScore++;
+        playerBox.innerText = String(playerScore);
+    } else if (lossValue == true) {
+        computerScore++;
+        computerBox.innerText = String(computerScore);
+    }
+    if (playerScore == 5) {
+        winnerBox.innerText = 'Player Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    } else if (computerScore == 5) {
+        winnerBox.innerText = 'Computer Wins!';
+        playerScore = 0;
+        computerScore = 0;
+        playerBox.innerText = String(playerScore);
+        computerBox.innerText = String(computerScore);
+    }
 })
 
 function computerPlay() {
@@ -43,13 +114,13 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == 'rock' && computerSelection == 'rock') {
         return 'Draw. Two Rocks collide.'
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        return 'You Win! Paper beats Rock!'
+        return 'You win! Paper beats Rock!'
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         return 'You lose. Scissors beat Paper.'
     } else if (playerSelection == 'paper' && computerSelection == 'paper') {
         return 'Draw. Both sheets of paper drift away.'
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        return 'You Win! Scissors beat Paper!'
+        return 'You win! Scissors beat Paper!'
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         return 'You lose. Rock beats Scissors.'
     } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
@@ -58,33 +129,3 @@ function playRound(playerSelection, computerSelection) {
     else { return 'It went wrong'
 }
 }
-
-
-function game() {
-    let playerSelection = playerSelect()
-    console.log(playerSelection)
-    let computerSelection = computerPlay()
-    console.log(computerSelection)
-    console.log(playRound(playerSelection, computerSelection))
-    let playerSelection2 = playerSelect()
-    console.log(playerSelection2)
-    let computerSelection2 = computerPlay()
-    console.log(computerSelection2)
-    console.log(playRound(playerSelection2, computerSelection2))
-    let playerSelection3 = playerSelect()
-    console.log(playerSelection3)
-    let computerSelection3 = computerPlay()
-    console.log(computerSelection3)
-    console.log(playRound(playerSelection3, computerSelection3))
-    let playerSelection4 = playerSelect()
-    console.log(playerSelection4)
-    let computerSelection4 = computerPlay()
-    console.log(computerSelection4)
-    console.log(playRound(playerSelection4, computerSelection4))
-    let playerSelection5 = playerSelect()
-    console.log(playerSelection5)
-    let computerSelection5 = computerPlay()
-    console.log(computerSelection5)
-    console.log(playRound(playerSelection5, computerSelection5))
-}
-
