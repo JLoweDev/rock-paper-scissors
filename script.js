@@ -1,24 +1,31 @@
-const rock = document.getElementById('rockBtn')
-const paper = document.getElementById('paperBtn')
-const scissors = document.getElementById('scissorsBtn')
-const infoBox = document.getElementById('infoBox')
+const rock = document.getElementById('rockBtn');
+const paper = document.getElementById('paperBtn');
+const scissors = document.getElementById('scissorsBtn');
+const infoBox = document.getElementById('infoBox');
+const p = document.createElement('p');
 
 rock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection))
+    p.innerText = playRound(playerSelection, computerSelection);
+    infoBox.appendChild(p);
 })
 
 paper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection))
+    p.innerText = playRound(playerSelection, computerSelection);
+    infoBox.appendChild(p);
 })
 
 scissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection))
+    p.innerText = playRound(playerSelection, computerSelection);
+    infoBox.appendChild(p);
 })
 
 function computerPlay() {
@@ -26,6 +33,7 @@ function computerPlay() {
     let computerSelection = myArray[Math.floor(Math.random() * myArray.length)];
     return computerSelection;
 }
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
