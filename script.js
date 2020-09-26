@@ -7,7 +7,7 @@ const p = document.createElement('p');
 rock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection))
+    playRound(playerSelection, computerSelection)
     p.innerText = playRound(playerSelection, computerSelection);
     infoBox.appendChild(p);
 })
@@ -15,7 +15,7 @@ rock.addEventListener('click', () => {
 paper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection))
+    playRound(playerSelection, computerSelection);
     p.innerText = playRound(playerSelection, computerSelection);
     infoBox.appendChild(p);
 })
@@ -23,7 +23,7 @@ paper.addEventListener('click', () => {
 scissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection))
+    playRound(playerSelection, computerSelection)
     p.innerText = playRound(playerSelection, computerSelection);
     infoBox.appendChild(p);
 })
