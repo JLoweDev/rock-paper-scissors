@@ -10,6 +10,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 rock.addEventListener('click', () => {
+    winnerBox.innerText = '';
     let playerSelection = 'rock';
     let computerSelection = computerPlay();
     let result = playRound(playerSelection, computerSelection);
@@ -40,6 +41,7 @@ rock.addEventListener('click', () => {
 })
 
 paper.addEventListener('click', () => {
+    winnerBox.innerText = '';
     let playerSelection = 'paper';
     let computerSelection = computerPlay();
     let result = playRound(playerSelection, computerSelection);
@@ -70,6 +72,7 @@ paper.addEventListener('click', () => {
 })
 
 scissors.addEventListener('click', () => {
+    winnerBox.innerText = '';
     let playerSelection = 'scissors';
     let computerSelection = computerPlay();
     let result = playRound(playerSelection, computerSelection);
